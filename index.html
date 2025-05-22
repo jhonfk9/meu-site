@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Querido Tainá</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .page {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .page.active {
+      display: flex;
+    }
+    button {
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      margin: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    img {
+      max-width: 80%;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page active" id="page0">
+    <h1>Querido Tainá,<br>tem algum interesse em mim?</h1>
+    <button onclick="showPage(1)">Sim</button>
+    <button onclick="showPage(5)">Não</button>
+  </div>
+
+  <!-- Página 1 -->
+  <div class="page" id="page1">
+    <h2>Sou um cara romântico ❤️</h2>
+    <img src="https://via.placeholder.com/400x250?text=Romance" alt="Romântico">
+    <button onclick="showPage(2)">Próxima</button>
+  </div>
+
+  <!-- Página 2 -->
+  <div class="page" id="page2">
+    <h2>Sou engraçado... eu acho 😂</h2>
+    <img src="https://via.placeholder.com/400x250?text=Humor" alt="Engraçado">
+    <button onclick="showPage(3)">Próxima</button>
+  </div>
+
+  <!-- Página 3 -->
+  <div class="page" id="page3">
+    <h2>Te levaria café na cama ☕</h2>
+    <p>Isso é raro hein</p>
+    <img src="https://via.placeholder.com/400x250?text=Café+na+cama" alt="Café na cama">
+    <button onclick="showPage(4)">Próxima</button>
+  </div>
+
+  <!-- Página 4 -->
+  <div class="page" id="page4">
+    <h2>Porra, tô apaixonado faz tempo 😔</h2>
+    <p>Me dá uma oportunidade, mulher... já tô me humilhando aqui</p>
+    <img src="https://via.placeholder.com/400x250?text=Declaração" alt="Declaração">
+  </div>
+
+  <!-- Página para "Não" -->
+  <div class="page" id="page5">
+    <h2>Homem apaixonado é uma humilhação mesmo 💔</h2>
+    <p>Prometo... vou desistir disso.</p>
+    <img src="https://via.placeholder.com/400x250?text=Desistência" alt="Desistindo">
+  </div>
+
+  <script>
+    function showPage(id) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(p => p.classList.remove('active'));
+      document.getElementById(`page${id}`).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
