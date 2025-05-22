@@ -16,6 +16,7 @@
       height: 100vh;
       text-align: center;
     }
+
     .page {
       display: none;
       flex-direction: column;
@@ -23,9 +24,26 @@
       justify-content: center;
       padding: 20px;
     }
+
     .page.active {
       display: flex;
     }
+
+    .content-box {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 90vw;
+      width: 400px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
     button {
       background-color: #ff69b4;
       border: none;
@@ -36,73 +54,62 @@
       border-radius: 8px;
       cursor: pointer;
     }
-    img {
-      max-width: 80%;
-      margin-top: 20px;
-      border-radius: 12px;
-    }
   </style>
 </head>
 <body>
 
   <div class="page active" id="page0">
-    <h1>Querida Taina,<br>tem algum minimo interesse em mim kkk?</h1>
-    <button onclick="showPage(1)">Sim</button>
-    <button onclick="showPage(5)">Não</button>
+    <div class="content-box">
+      <h1>Querida Taina,<br>tem algum minimo interesse em mim kkk?</h1>
+      <button onclick="showPage(1)">Sim</button>
+      <button onclick="showPage(5)">Não</button>
+    </div>
   </div>
 
- <!-- Página 1 -->
-<div class="page" id="page1" style="background-color: #1a1a1a; color: #ffffff; padding: 20px; border-radius: 12px;">
-  <h2>Sou um cara romântico ❤️</h2>
-  <img 
-    src="https://images.unsplash.com/photo-1611784599736-0ab934a3245a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-    alt="Romântico"
-    style="max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0;"
-  >
-  <button onclick="showPage(2)">Próxima</button>
-</div>
+  <!-- Página 1 -->
+  <div class="page" id="page1">
+    <div class="content-box">
+      <h2>Sou um cara romântico ❤️</h2>
+      <img src="https://images.unsplash.com/photo-1611784599736-0ab934a3245a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Romântico">
+      <button onclick="showPage(2)">Próxima</button>
+    </div>
+  </div>
 
   <!-- Página 2 -->
-<div class="page" id="page2" style="background-color: #1a1a1a; color: #ffffff; padding: 20px; border-radius: 12px;">
-  <h2>Sou engraçado... eu acho 🤪</h2>
-  <img 
-    src="https://ichef.bbci.co.uk/ace/ws/624/amz/worldservice/live/assets/images/2015/04/12/150412100007_giraffe_624x351_bbc_nocredit.jpg.webp" 
-    alt="Engraçado"
-    style="max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0;"
-  >
-  <button onclick="showPage(3)">Próxima</button>
-</div>
+  <div class="page" id="page2">
+    <div class="content-box">
+      <h2>Sou engraçado... eu acho 🤪</h2>
+      <img src="https://ichef.bbci.co.uk/ace/ws/624/amz/worldservice/live/assets/images/2015/04/12/150412100007_giraffe_624x351_bbc_nocredit.jpg.webp" alt="Engraçado">
+      <button onclick="showPage(3)">Próxima</button>
+    </div>
+  </div>
 
   <!-- Página 3 -->
-  <div class="page" id="page3" style="background-color: #1a1a1a; color: #ffffff; padding: 20px; border-radius: 12px;">
-    <h2>Te levaria café na cama ☕ e faria de tudo pra te ver sorrir</h2>
-    <p>Isso é raro hein</p>
-    <img 
-      src="https://thumbs.dreamstime.com/z/homem-que-traz-o-caf%C3%A9-da-manh%C3%A3-sua-cama-76666726.jpg"
-      alt="Café na cama"
-      style="max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0;"
-    >
-    <button onclick="showPage(4)">Próxima</button>
+  <div class="page" id="page3">
+    <div class="content-box">
+      <h2>Te levaria café na cama ☕ e faria de tudo pra te ver sorrir</h2>
+      <p>Isso é raro hein</p>
+      <img src="https://thumbs.dreamstime.com/z/homem-que-traz-o-caf%C3%A9-da-manh%C3%A3-sua-cama-76666726.jpg" alt="Café na cama">
+      <button onclick="showPage(4)">Próxima</button>
+    </div>
   </div>
 
   <!-- Página 4 -->
-  <div class="page" id="page4" style="background-color: #1a1a1a; color: #ffffff; padding: 20px; border-radius: 12px;">
-    <h2>e o mais importante tô apaixonado faz tempo 😔</h2>
-    <p>Me dá uma oportunidade, mulher... já tô me humilhando aqui</p>
-    <img src="https://i0.wp.com/estudos.gospelmais.com.br/files/2015/05/image.jpeg?fit=1701%2C1129&ssl=1" 
-         alt="Declaração"
-         style="max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0;"
-       >
+  <div class="page" id="page4">
+    <div class="content-box">
+      <h2>e o mais importante tô apaixonado faz tempo 😔</h2>
+      <p>Me dá uma oportunidade, mulher... já tô me humilhando aqui</p>
+      <img src="https://i0.wp.com/estudos.gospelmais.com.br/files/2015/05/image.jpeg?fit=1701%2C1129&ssl=1" alt="Declaração">
+    </div>
   </div>
 
   <!-- Página para "Não" -->
   <div class="page" id="page5">
-    <h2>Homem apaixonado é uma humilhação mesmo 💔</h2>
-    <p>Mas fui criativo vai kkkkkkk.</p>
-    <img src="https://www.publicdomainpictures.net/pictures/280000/nahled/creative-man.jpg" 
-         alt="Desistindo"
-         style="max-width: 100%; height: auto; border-radius: 12px; margin: 20px 0;"
-       >
+    <div class="content-box">
+      <h2>Homem apaixonado é uma humilhação mesmo 💔</h2>
+      <p>Mas fui criativo vai kkkkkkk.</p>
+      <img src="https://www.publicdomainpictures.net/pictures/280000/nahled/creative-man.jpg" alt="Desistindo">
+    </div>
   </div>
 
   <script>
@@ -115,3 +122,4 @@
 
 </body>
 </html>
+
