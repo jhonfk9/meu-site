@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Querida Taina</title>
   <style>
     body {
@@ -15,6 +15,7 @@
       align-items: center;
       height: 100vh;
       text-align: center;
+      overflow: hidden;
     }
 
     .page {
@@ -23,10 +24,13 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
     }
 
     .page.active {
       display: flex;
+      opacity: 1;
     }
 
     .content-box {
@@ -44,7 +48,7 @@
       margin: 20px 0;
     }
 
-    button {
+    button, a button {
       background-color: #ff69b4;
       border: none;
       color: white;
@@ -54,13 +58,36 @@
       border-radius: 8px;
       cursor: pointer;
     }
+
+    a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 500px) {
+      .content-box {
+        width: 90vw;
+        padding: 10px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Música de fundo -->
+  <audio id="bgm" autoplay loop>
+    <source src="te-esperando.mp3.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Página 0 -->
   <div class="page active" id="page0">
     <div class="content-box">
-      <h1>Querida Taina,<br>tem algum minimo interesse em mim kkk?</h1>
+      <h1>Querida Taina,<br>tem algum mínimo interesse em mim kkk?</h1>
       <button onclick="showPage(1)">Sim</button>
       <button onclick="showPage(5)">Não</button>
     </div>
@@ -70,8 +97,9 @@
   <div class="page" id="page1">
     <div class="content-box">
       <h2>Sou um cara romântico ❤️</h2>
-      <img src="https://images.unsplash.com/photo-1611784599736-0ab934a3245a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Romântico">
+      <img src="https://images.unsplash.com/photo-1611784599736-0ab934a3245a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0" alt="Romântico" />
       <button onclick="showPage(2)">Próxima</button>
+      <button onclick="showPage(0)">Voltar</button>
     </div>
   </div>
 
@@ -79,8 +107,9 @@
   <div class="page" id="page2">
     <div class="content-box">
       <h2>Sou engraçado... eu acho 🤪</h2>
-      <img src="https://ichef.bbci.co.uk/ace/ws/624/amz/worldservice/live/assets/images/2015/04/12/150412100007_giraffe_624x351_bbc_nocredit.jpg.webp" alt="Engraçado">
+      <img src="https://ichef.bbci.co.uk/ace/ws/624/amz/worldservice/live/assets/images/2015/04/12/150412100007_giraffe_624x351_bbc_nocredit.jpg.webp" alt="Engraçado" />
       <button onclick="showPage(3)">Próxima</button>
+      <button onclick="showPage(0)">Voltar</button>
     </div>
   </div>
 
@@ -89,37 +118,50 @@
     <div class="content-box">
       <h2>Te levaria café na cama ☕ e faria de tudo pra te ver sorrir</h2>
       <p>Isso é raro hein</p>
-      <img src="https://thumbs.dreamstime.com/z/homem-que-traz-o-caf%C3%A9-da-manh%C3%A3-sua-cama-76666726.jpg" alt="Café na cama">
+      <img src="https://thumbs.dreamstime.com/z/homem-que-traz-o-caf%C3%A9-da-manh%C3%A3-sua-cama-76666726.jpg" alt="Café na cama" />
       <button onclick="showPage(4)">Próxima</button>
+      <button onclick="showPage(0)">Voltar</button>
     </div>
   </div>
 
   <!-- Página 4 -->
   <div class="page" id="page4">
     <div class="content-box">
-      <h2>e o mais importante tô apaixonado faz tempo 😔</h2>
+      <h2>e o mais importante: tô apaixonado faz tempo 😔</h2>
       <p>Me dá uma oportunidade, mulher... já tô me humilhando aqui</p>
-      <img src="https://i0.wp.com/estudos.gospelmais.com.br/files/2015/05/image.jpeg?fit=1701%2C1129&ssl=1" alt="Declaração">
+      <img src="https://i0.wp.com/estudos.gospelmais.com.br/files/2015/05/image.jpeg?fit=1701%2C1129&ssl=1" alt="Declaração" />
+      <a href="#" target="_blank">
+        <button>Vamos conversar?</button>
+      </a>
+      <button onclick="showPage(0)">Voltar ao início</button>
     </div>
   </div>
 
-  <!-- Página para "Não" -->
+  <!-- Página "Não" -->
   <div class="page" id="page5">
     <div class="content-box">
       <h2>Homem apaixonado é uma humilhação mesmo 💔</h2>
       <p>Mas fui criativo vai kkkkkkk.</p>
-      <img src="https://www.publicdomainpictures.net/pictures/280000/nahled/creative-man.jpg" alt="Desistindo">
+      <img src="https://www.publicdomainpictures.net/pictures/280000/nahled/creative-man.jpg" alt="Desistindo" />
+      <button onclick="showPage(0)">Voltar ao início</button>
     </div>
   </div>
 
   <script>
     function showPage(id) {
       const pages = document.querySelectorAll('.page');
-      pages.forEach(p => p.classList.remove('active'));
-      document.getElementById(`page${id}`).classList.add('active');
+      pages.forEach(p => {
+        p.classList.remove('active');
+        p.style.opacity = 0;
+      });
+
+      const nextPage = document.getElementById(`page${id}`);
+      nextPage.classList.add('active');
+      setTimeout(() => {
+        nextPage.style.opacity = 1;
+      }, 50);
     }
   </script>
 
 </body>
 </html>
-
