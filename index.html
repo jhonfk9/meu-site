@@ -79,8 +79,8 @@
 <body>
 
   <!-- Música de fundo -->
-  <audio id="bgm" autoplay loop>
-    <source src="te-esperando.mp3.mp3" type="audio/mpeg">
+  <audio id="bgm" loop>
+    <source src="te-esperando.mp3" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
 
@@ -88,8 +88,9 @@
   <div class="page active" id="page0">
     <div class="content-box">
       <h1>Querida Taina,<br>tem algum mínimo interesse em mim kkk?</h1>
-      <button onclick="showPage(1)">Sim</button>
+      <button onclick="document.getElementById('bgm').play(); showPage(1)">Sim</button>
       <button onclick="showPage(5)">Não</button>
+      <button onclick="document.getElementById('bgm').play()">▶️ Tocar música</button>
     </div>
   </div>
 
@@ -165,3 +166,4 @@
 
 </body>
 </html>
+
